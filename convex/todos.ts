@@ -40,8 +40,7 @@ export const deleteTodo = mutation({
 });
 
 export const deleteAllTodos = mutation({
-  args: { id: v.id("todos") },
-  handler: async (ctx, args) => {
+  handler: async (ctx) => {
     const todos = await ctx.db.query("todos").collect();
 
     // Deletes all todos

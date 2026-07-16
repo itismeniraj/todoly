@@ -105,9 +105,18 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    AsyncStorage.getItem("darkMode").then((value) => {
-      if (value) setIsDarkMode(JSON.parse(value));
-    });
+    const loadTheme = async () => {
+      try {
+        const value = await AsyncStorage.getItem("darkMode");
+        if (value !== null) {
+          setIsDarkMode(JSON.parse(value));
+        }
+      } catch (error) {
+        console.error("Failed to load dark mode state from storage", error);
+      }
+    };
+
+    loadTheme();
   }, []);
 
   const toggleDarkMode = async () => {

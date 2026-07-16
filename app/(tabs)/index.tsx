@@ -1,5 +1,6 @@
 import { createHomeStyles } from "@/assets/styles/home.styles";
 import Header from "@/components/Header";
+import TextInputField from "@/components/TextInputField";
 import { api } from "@/convex/_generated/api";
 import { useTheme } from "@/hooks/useTheme";
 import { useMutation, useQuery } from "convex/react";
@@ -25,13 +26,14 @@ export default function Index() {
       <StatusBar barStyle={colors.statusBarStyle} />
       <SafeAreaView style={homeStyles.container}>
         <Header />
+        <TextInputField />
         <TouchableOpacity onPress={() => toggleDarkMode()}>
           <Text>Toggle Theme</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => addTodo({ text: "Walk the dog!" })}>
+        {/* <TouchableOpacity onPress={() => addTodo({ text: "Walk the dog!" })}>
           <Text>Add Todo</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </SafeAreaView>
     </LinearGradient>
   );

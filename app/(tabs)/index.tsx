@@ -1,4 +1,5 @@
 import { createHomeStyles } from "@/assets/styles/home.styles";
+import Header from "@/components/Header";
 import { api } from "@/convex/_generated/api";
 import { useTheme } from "@/hooks/useTheme";
 import { useMutation, useQuery } from "convex/react";
@@ -23,16 +24,13 @@ export default function Index() {
     >
       <StatusBar barStyle={colors.statusBarStyle} />
       <SafeAreaView style={homeStyles.container}>
-        <TouchableOpacity onPress={() => addTodo({ text: "Clean the room" })}>
-          <Text>Add New Todo</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => deleteAllTodos()}>
-          <Text>Clear All Todos</Text>
-        </TouchableOpacity>
-
+        <Header />
         <TouchableOpacity onPress={() => toggleDarkMode()}>
           <Text>Toggle Theme</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => addTodo({ text: "Walk the dog!" })}>
+          <Text>Add Todo</Text>
         </TouchableOpacity>
       </SafeAreaView>
     </LinearGradient>

@@ -19,7 +19,7 @@ const TabsLayout = () => {
           paddingTop: 10,
         },
         tabBarLabelStyle: {
-          fontSize: 12,
+          fontSize: 14,
           fontWeight: "600",
         },
         headerShown: false,
@@ -30,7 +30,7 @@ const TabsLayout = () => {
         options={{
           title: "Todos",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="flash-outline" color={color} />
+            <Ionicons name="flash-outline" color={color} size={size} />
           ),
         }}
       />
@@ -39,7 +39,7 @@ const TabsLayout = () => {
         options={{
           title: "Settings",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="settings" color={color} />
+            <Ionicons name="settings" color={color} size={size} />
           ),
         }}
       />

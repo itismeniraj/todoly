@@ -28,11 +28,9 @@ export default function Index() {
   const [editText, setEditText] = useState("");
 
   const todos = useQuery(api.todos.getTodos);
-  const addTodo = useMutation(api.todos.addTodo);
   const toggleTodo = useMutation(api.todos.toggleTodo);
   const deleteTodo = useMutation(api.todos.deleteTodo);
   const updateTodo = useMutation(api.todos.updateTodo);
-  const deleteAllTodos = useMutation(api.todos.deleteAllTodos);
 
   const homeStyles = createHomeStyles(colors);
   const isLoading = todos === undefined;
